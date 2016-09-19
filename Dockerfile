@@ -33,5 +33,6 @@ RUN cd /root/ \
   && mkdir release \
   && cd release \
   && cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON -D BUILD_EXAMPLES=ON -D WITH_QT=ON -D WITH_OPENGL=ON .. \
-  && make
-  && sudo make install
+  && make -j8\
+  && make install \
+  && rm /root/opencv-2.4.13.1/ -r -f
