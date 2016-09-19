@@ -2,7 +2,11 @@ FROM ubuntu:14.04.5
 
 MAINTAINER Chakkrit Termritthikun <chakkritte57@nu.ac.th>
 
-RUN apt-get -q  -y update && apt-get -q -y install \
+RUN \
+  apt-get -q -y update 
+
+RUN \
+  apt-get -q -y install \
   wget \
   unzip \
   libopencv-dev \
