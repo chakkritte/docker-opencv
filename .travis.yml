@@ -1,0 +1,15 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+script:
+  - docker build -t chakkritte/docker-opencv .
+  - docker run -d chakkritte/docker-opencv
+  
+  - docker ps -a
+  
+notifications:
+  email: false
